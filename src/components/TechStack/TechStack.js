@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./TechStack.css";
+
+import TechStackIcon from "./TechStackIcon/TechStackIcon";
 import react from "../../images/TechStack/react.png";
 import c from "../../images/TechStack/c.png";
 import firebase from "../../images/TechStack/firebase.png";
@@ -20,48 +22,55 @@ function TechStack()
         {
             iconImage: react,
             iconAltProperty: "reactImage",
-            iconName: 'React'
+            iconName: "React",
         },
         {
             iconImage: js,
             iconAltProperty: "jsImage",
-            iconName: 'Javascript'
+            iconName: "Javascript",
         },
         {
             iconImage: html,
             iconAltProperty: "htmlImage",
-            iconName: 'HTML'
+            iconName: "HTML",
         },
         {
             iconImage: css,
             iconAltProperty: "cssImage",
-            iconName: 'CSS'
+            iconName: "CSS",
         },
-    ]
+    ];
 
     const techstackData2 = [
         {
             iconImage: cpp,
             iconAltProperty: "cppImage",
-            iconName: 'C++'
+            iconName: "C++",
         },
         {
             iconImage: firebase,
             iconAltProperty: "firebaseImage",
-            iconName: 'Firebase'
+            iconName: "Firebase",
         },
         {
             iconImage: github,
             iconAltProperty: "githubImage",
-            iconName: 'Github'
+            iconName: "Github",
         },
         {
             iconImage: c,
             iconAltProperty: "cImage",
-            iconName: 'C Language'
+            iconName: "C Language",
         },
     ]
-
+    function showIcon(value) {
+        return (
+          <div className="techstack_image_element_container">
+            <img src={value.iconImage} alt={value.iconAltProperty} />
+            <p>{value.iconName}</p>
+          </div> 
+        );
+      }
 
     return (
 
@@ -76,6 +85,9 @@ function TechStack()
                         </div>
                     ))}
                         
+                    {techstackData.map((value, key) => (
+                        <TechStackIcon data={value} />
+                    ))}    
                     {/* <div className="techstack_image_element_container">
                         <img src={react} alt="reactImage" />
                         <p>React</p>
@@ -105,6 +117,10 @@ function TechStack()
                         </div>
                     ))}    
                     
+                    {techstackData2.map((value, key) => (
+                        showIcon(value)
+                    ))}
+
                     {/* <div className="techstack_image_element_container">
                         <img src={css} alt="cssImage" />
                         <p>CSS</p>
@@ -122,7 +138,7 @@ function TechStack()
                         <p>C++</p>
                     </div> */}
                 </div>
-                
+
             </div>
 
         </div>
