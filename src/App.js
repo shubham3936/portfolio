@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from "./components/Navbar/Navbar.js";
 import About from "./components/About/About.js";
-
+import TechStack from "./components/TechStack/TechStack";
 //componrtn to be made
 // 1. navbar
 // 2. about
@@ -15,6 +15,7 @@ function App()
         <div classsName="App">
             <Navbar/>
             <About/>
+            <TechStack />
         </div>
     );
 }
